@@ -1,0 +1,31 @@
+:global {
+    body[data-theme='light'] {
+        --header-color: var(--gray-300);
+        --header-secondary-color: var(--main-color);
+    }
+
+    body[data-theme='dark'] {
+        --header-color: var(--white);
+        --header-secondary-color: var(--main-color);
+    }
+}
+
+.header {
+    margin: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--header-color);
+    text-shadow: 0.5px 0.5px 0px #93b1e1, -0.5px -0.5px 0px #000108ec;
+    font-size: 1.75rem;
+    line-height: 1.5;
+    font-weight: 700;
+
+    span {
+        color: var(--header-secondary-color);
+
+    }
+}

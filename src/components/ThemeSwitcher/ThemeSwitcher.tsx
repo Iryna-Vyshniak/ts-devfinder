@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import MoonIcon from 'assets/icon-moon.svg?react';
-import SunIcon from 'assets/icon-sun.svg?react';
+import MoonIcon from '../../assets/icon-moon.svg?react';
+import SunIcon from '../../assets/icon-sun.svg?react';
 
 import styles from './ThemeSwitcher.module.scss';
 
