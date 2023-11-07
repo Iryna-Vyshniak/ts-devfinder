@@ -16,8 +16,8 @@ const Search = ({ hasError, onSubmit }: SearchProps) => {
     e.preventDefault();
     const text = e.currentTarget.username.value;
 
-    if (text.trim()) {
-      onSubmit(text);
+    if (text) {
+      onSubmit(text.toLowerCase().trim());
       e.currentTarget.reset();
     }
   };
