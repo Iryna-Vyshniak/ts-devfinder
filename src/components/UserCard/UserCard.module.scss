@@ -1,0 +1,171 @@
+:global {
+  body[data-theme='light'] {
+    --ucard-bg: var(--white);
+    --bio-color: var(--gray-200);
+    --ucard-shadow: var(--shadow);
+  }
+
+  body[data-theme='dark'] {
+    --ucard-bg: var(--gray-400);
+    --bio-color: var(--white);
+    --ucard-shadow: unset;
+  }
+}
+
+.userCard {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4.5rem 0 3rem;
+  padding: 30px 24px 40px;
+  width: 100%;
+  height: auto;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: var(--gray-200);
+  background: -webkit-linear-gradient(bottom left, #fdfbf7 0%, #4e75ca 100%);
+  background: -moz-linear-gradient(bottom left, #fdfbf7 0%,
+      #4e75ca 100%);
+  background: -o-linear-gradient(bottom left, #fdfbf7 0%,
+      #4e75ca 100%);
+  background: linear-gradient(to top right, #fdfbf7 0%,
+      #4e75ca 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfbf7', endColorstr='#4e75ca', GradientType=1);
+  color: var(--main-color);
+  box-shadow: var(--ucard-shadow);
+  border-radius: 15px;
+}
+
+.center {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  margin: 0 auto;
+  width: calc(100% - 30px);
+  /* відняла padding від ширини */
+  height: auto;
+  background-color: var(--ucard-bg);
+  border-radius: 3px;
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  transition: all .4s ease-in-out;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  flex: 2;
+  padding: 8px;
+  text-align: center;
+
+  .image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    .circle-1 {
+      position: absolute;
+      box-sizing: border-box;
+      width: 106px;
+      height: 106px;
+      top: -3px;
+      left: -3px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--main-color) var(--main-color) var(--main-color) transparent;
+      border-radius: 50%;
+      transition: all 1.5s ease-in-out;
+    }
+
+    .circle-2 {
+      @extend .circle-1;
+      width: 112px;
+      height: 112px;
+      top: -6px;
+      left: -6px;
+      border-color: var(--main-color) transparent var(--main-color) var(--main-color);
+    }
+
+    .avatar {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #F5E8DF;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .circle-1 {
+        transform: rotate(360deg);
+      }
+
+      .circle-2 {
+        transform: rotate(-360deg);
+      }
+
+    }
+  }
+}
+
+.bio {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--bio-color);
+
+  &.empty {
+    opacity: 0.75;
+  }
+}
+
+.stats {
+  flex: 1;
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  padding: 10px 20px;
+  border-radius: 3px;
+  background-color: var(--ucard-bg);
+  max-width: 480px;
+  width: calc(100% - 30px);
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  animation: animainfos 0.5s cubic-bezier(0.425, 1.040, 0.470, 1.105) 0.75s forwards;
+}
+
+@media (max-width: 680px) {
+  .footer {
+    position: static;
+    transform: none;
+  }
+}
+
+@keyframes animainfos {
+  0% {
+    bottom: -6px;
+  }
+
+  100% {
+    bottom: -52px;
+  }
+}
+
+@keyframes animainfos {
+  0% {
+    bottom: -6px;
+  }
+
+  100% {
+    bottom: -52px;
+  }
+}
