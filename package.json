@@ -1,5 +1,8 @@
 {
   "name": "ts-devfinder",
+  "file": [
+    "dist"
+  ],
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +14,9 @@
     "prettier": "npx prettier src --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "preview": "vite preview --port 8080"
+    "serve": "vite preview --port 8080"
   },
   "dependencies": {
-    "@svgr/core": "^8.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
